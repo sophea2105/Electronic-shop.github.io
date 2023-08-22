@@ -6,6 +6,7 @@
     <title>Document</title>
     <link rel="stylesheet" href="home.css">
     <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    <script src="home.js"></script>
 </head>
 <body>
     <div class="header">
@@ -14,18 +15,17 @@
             <ul>
                 <li><a href="index.html">Home</a></li>
                 <li><a href="#">Smartphone</a>
-                <ul class="drop_menu">
-                    <li><a>Iphone</a></li>
-                    <li><a>Samsung</a></li>
-                    <li><a>Oppo</a></li>
-                    <li><a>Vivo</a></li>
-                    <li><a>Nokia</a></li>
-                    <li><a>Hauwei</a></li>
-                    <li><a>Realme</a></li>
+                <ul class="drop_menu" id="drop_menu">
+                    <li onclick="iphone();"><a>Iphone</a></li>
+                    <li onclick="samsung();"><a>Samsung</a></li>
+                    <li onclick="oppo();"><a>Oppo</a></li>
+                    <li onclick="vivo();"><a>Vivo</a></li>
+                    <li onclick="hauwei();"><a>Hauwei</a></li>
+                    <li onclick="realme();"><a>Realme</a></li>
                 </ul>
                 </li>
                 <li><a href="#">iPad/Tablet</a>
-                    <ul class="drop_menu">
+                    <ul class="drop_menu"  id="drop_menu">
                         <li><a>ipad</a></li>
                         <li><a>Galaxy Tap</a></li>
                         <li><a>Googple Tablet</a></li>
@@ -35,7 +35,7 @@
                     </ul>
                 </li>
                 <li><a href="#">Smartwatch</a>
-                    <ul class="drop_menu">
+                    <ul class="drop_menu"  id="drop_menu">
                         <li><a>Apple watch</a></li>
                         <li><a>Galaxy watch</a></li>
                         <li><a>Oppo watch</a></li>
@@ -43,7 +43,7 @@
                     </ul>
                 </li>
                 <li><a href="#">Laptop</a>
-                    <ul class="drop_menu">
+                    <ul class="drop_menu"  id="drop_menu">
                         <li><a>MacBook</a></li>
                         <li><a>MSI</a></li>
                         <li><a>Dell</a></li>
@@ -60,177 +60,560 @@
             <br><br>
             <div class="slide">
                 <div class="slide_img">
-                    <img src="https://i-store.net/_sh/63/6343.jpg">
+                    <img src="https://i-store.net/_sh/63/6343.jpg" id="slide_img1">
                 </div>
                 <div class="slide_img">
-                    <img src="https://images.macrumors.com/article-new/2018/11/m1-ipad-pro.jpg">
+                    <img src="https://images.macrumors.com/article-new/2018/11/m1-ipad-pro.jpg" id="slide_img2">
                 </div>
                 <div class="slide_img">
-                    <img src="https://www.notebookcheck.net/fileadmin/Notebooks/Apple/MacBook_Pro_14_2023_M2_Pro/AKA8518.jpg">
+                    <img src="https://www.notebookcheck.net/fileadmin/Notebooks/Apple/MacBook_Pro_14_2023_M2_Pro/AKA8518.jpg" id="slide_img3">
                 </div>
                 <div class="slide_img">
-                    <img src="https://img.ltwebstatic.com/images3_pi/2022/12/15/1671091925edcb5a989bc2677b2464025d0bbde3a7_thumbnail_750x.webp">
+                    <img src="https://img.ltwebstatic.com/images3_pi/2022/12/15/1671091925edcb5a989bc2677b2464025d0bbde3a7_thumbnail_750x.webp" id="slide_img4">
                 </div>
                 <div class="slide_img">
-                    <img src="https://hips.hearstapps.com/hmg-prod/images/airpods-pro-2022-1663797595.jpg?crop=0.5xw:1xh;center,top&resize=1200:*">
+                    <img src="https://hips.hearstapps.com/hmg-prod/images/airpods-pro-2022-1663797595.jpg?crop=0.5xw:1xh;center,top&resize=1200:*" id="slide_img5">
                 </div>
                 <div class="slide_img">
-                    <img src="https://reviewed-com-res.cloudinary.com/image/fetch/s--dvXpz6cB--/b_white,c_limit,cs_srgb,f_auto,fl_progressive.strip_profile,g_center,h_668,q_auto,w_1187/https://reviewed-production.s3.amazonaws.com/1651622088546/JBL_Flip_6_hero_brick.jpg">
+                    <img src="https://reviewed-com-res.cloudinary.com/image/fetch/s--dvXpz6cB--/b_white,c_limit,cs_srgb,f_auto,fl_progressive.strip_profile,g_center,h_668,q_auto,w_1187/https://reviewed-production.s3.amazonaws.com/1651622088546/JBL_Flip_6_hero_brick.jpg" id="slide_img6">
                 </div>
             </div>
             <br><br>
             <div class="list">
                 <div class="choose">
-                    <h1><i class='bx bx-mobile-alt'></i>Phone</h1>
-                    <h1><i class='bx bxs-watch' ></i>Watch</h1>
-                    <h1><i class='bx bx-tab' ></i>Tablet</h1>
-                    <h1><i class='bx bx-laptop' ></i>Laptop</h1>
+                    <h1 onclick="phone();"><i class='bx bx-mobile-alt'></i>Phone</h1>
+                    <h1 onclick="watch();"><i class='bx bxs-watch' ></i>Watch</h1>
+                    <h1 onclick="tablet();"><i class='bx bx-tab' ></i>Tablet</h1>
+                    <h1 onclick="laptop();"><i class='bx bx-laptop' ></i>Laptop</h1>
                 </div>
-                <h1 class="name_product">iPhone</h1>
-                <div class="apple_product">
-                    <div class="iphone">
-                        <img src="image/iPhone/iphone1.png">
-                        <h4>14 ProMax 128 GB</h4>
-                        <h4 class="price">$1169</h4>
+                <div id="product">
+                    <h1 class="name_product">iPhone</h1>
+                    <div class="apple_product">
+                        <div class="iphone">
+                            <table>
+                                <tr><td><img src="image/iPhone/iphone1.png"></td></tr>
+                                <tr><td><h4>14 ProMax 128 GB</h4></td></tr>
+                                <tr><td><h4 class="price">$1169</h4></td></tr>
+                            </table>
+                        </div>
+                        <div class="iphone">
+                            <table>
+                                <tr><td><img src="image/iPhone/iphone2.png"></td></tr>
+                                <tr><td><h4>14 ProMax 256 GB</h4></td></tr>
+                                <tr><td><h4 class="price">$1269</h4></td></tr>
+                            </table>
+                        </div>
+                        <div class="iphone">
+                            <table>
+                                <tr><td><img src="image/iPhone/iphone3.png"></td></tr>
+                                <tr><td><h4>14 ProMax 512 GB</h4></td></tr>
+                                <tr><td><h4 class="price">$1569</h4></td></tr>
+                            </table>
+                        </div>
+                        <div class="iphone">
+                            <table>
+                                <tr><td><img src="image/iPhone/iphone4.png"></td></tr>
+                                <tr><td><h4>14 ProMax 1TB</h4></td></tr>
+                                <tr><td><h4 class="price">$1839</h4></td></tr>
+                            </table>
+                        </div>
+                        <div class="iphone">
+                            <table>
+                                <tr><td><img src="image/iPhone/iphone5.png"></td></tr>
+                                <tr><td><h4>iPhone 13 128 GB</h4></td></tr>
+                                <tr><td><h4 class="price">$729</h4></td></tr>
+                            </table>
+                        </div>
                     </div>
-                    <div class="iphone">
-                        <img src="image/iPhone/iphone2.png">
-                        <h4>14 ProMax 256 GB</h4>
-                        <h4 class="price">$1269</h4>
+                    <br><br><br><br>
+                    <h1  class="name_product">Laptop</h1>
+                    <div class="laptop_product">
+                        <div class="laptop">
+                            <table>
+                                <img src="image/laptop/laptop1.png">
+                                <tr><td><h4>MacBook M2 256 GB</h4></td></tr>
+                                <tr><td><h4 class="price">$1359</h4></td></tr>
+                            </table>
+                        </div>
+                        <div class="laptop">
+                            <table>
+                                <tr><td></td></tr>
+                                <tr><td></td></tr>
+                                <tr><td></td></tr>
+                            </table>
+                            <img src="image/laptop/laptop2.png">
+                            <h4>MacBook Air M2 256 GB</h4>
+                            <h4 class="price">$1259</h4>
+                        </div>
+                        <div class="laptop">
+                            <table>
+                                <tr><td></td></tr>
+                                <tr><td></td></tr>
+                                <tr><td></td></tr>
+                            </table>
+                            <img src="image/laptop/laptop3.png">
+                            <h4>MacBook Air M2 512 GB</h4>
+                            <h4 class="price">$1359</h4>
+                        </div>
+                        <div class="laptop">
+                            <table>
+                                <tr><td></td></tr>
+                                <tr><td></td></tr>
+                                <tr><td></td></tr>
+                            </table>
+                            <img src="image/laptop/laptop4.png">
+                            <h4>MacBook Pro 512 GB</h4>
+                            <h4 class="price">$1599</h4>
+                        </div>
+                        <div class="laptop">
+                            <table>
+                                <tr><td></td></tr>
+                                <tr><td></td></tr>
+                                <tr><td></td></tr>
+                            </table>
+                            <img src="image/laptop/laptop5.png">
+                            <h4>MacBook Pro 14 1TB</h4>
+                            <h4 class="price">$2499</h4>
+                        </div>
                     </div>
-                    <div class="iphone">
-                        <img src="image/iPhone/iphone3.png">
-                        <h4>14 ProMax 512 GB</h4>
-                        <h4 class="price">$1569</h4>
+                    <br><br><br><br>
+                    <h1  class="name_product">Speaker</h1>
+                    <div class="speaker_product">
+                        <div class="speaker">
+                            <table>
+                                <tr><td><img src="image/speaker/speaker1.png"></td></tr>
+                                <tr><td><h4>JBL Flip 6</h4></td></tr>
+                                <tr><td><h4 class="price">$119</h4></td></tr>
+                            </table>
+                        </div>
+                        <div class="speaker">
+                            <table>
+                                <tr><td><img src="image/speaker/speaker2.png"></td></tr>
+                                <tr><td><h4>JBL Partybox</h4></td></tr>
+                                <tr><td><h4 class="price">$299</h4></td></tr>
+                            </table>
+                        </div>
+                        <div class="speaker">
+                            <table>
+                                <tr><td><img src="image/speaker/speaker3.png"></td></tr>
+                                <tr><td><h4>JBL Partybox</h4></td></tr>
+                                <tr><td><h4 class="price">$759</h4></td></tr>
+                            </table>   
+                        </div>
+                        <div class="speaker">
+                            <table>
+                                <tr><td><img src="image/speaker/speaker4.png"></td></tr>
+                                <tr><td><h4>Tronsmart</h4></td></tr>
+                                <tr><td><h4 class="price">Comming soon!</h4></td></tr>
+                            </table>
+                        </div>
+                        <div class="speaker">
+                            <table>
+                                <tr><td><img src="image/speaker/speaker5.png"></td></tr>
+                                <tr><td><h4>Soundcore</h4></td></tr>
+                                <tr><td><h4 class="price">Sold out!</h4></td></tr>
+                            </table> 
+                        </div>
                     </div>
-                    <div class="iphone">
-                        <img src="image/iPhone/iphone4.png">
-                        <h4>14 ProMax 1TB</h4>
-                        <h4 class="price">$1839</h4>
+                    <br><br><br><br>
+                    <h1  class="name_product">Tablet/iPad</h1>
+                    <div class="ipad_product">
+                        <div class="ipad">
+                            <table>
+                                <tr><td><img src="image/ipad/ipad1.png"></td></tr>
+                                <tr><td><h4>iPad Pro</h4></td></tr>
+                                <tr><td><h4 class="price">Sold out!</h4></td></tr>
+                            </table>   
+                        </div>
+                        <div class="ipad">
+                            <table>
+                                <tr><td><img src="image/ipad/ipad2.png"></td></tr>
+                                <tr><td><h4>iPad Mini</h4></td></tr>
+                                <tr><td><h4 class="price">$299</h4></td></tr>
+                            </table>   
+                        </div>
+                        <div class="ipad">
+                            <table>
+                                <tr><td><img src="image/ipad/ipad3.png"></td></tr>
+                                <tr><td><h4>iPad</h4></td></tr>
+                                <tr><td><h4 class="price">$759</h4></td></tr>
+                            </table>  
+                        </div>
+                        <div class="ipad">
+                            <table>
+                                <tr><td><img src="image/ipad/ipad4.png"></td></tr>
+                                <tr><td><h4>iPad</h4></td></tr>
+                                <tr><td><h4 class="price">$599</h4></td></tr>
+                            </table>
+                        </div>
+                        <div class="ipad">
+                            <table>
+                                <tr><td><img src="image/ipad/ipad1.png"></td></tr>
+                                <tr><td><h4>iPad</h4></td></tr>
+                                <tr><td><h4 class="price">Sold out!</h4></td></tr>
+                            </table>
+                        </div>
                     </div>
-                    <div class="iphone">
-                        <img src="image/iPhone/iphone5.png">
-                        <h4>iPhone 13 128 GB</h4>
-                        <h4 class="price">$729</h4>
+                    <br><br><br><br>
+                    <h1  class="name_product">Smartwatch</h1>
+                    <div class="watch_product">
+                        <div class="watch">
+                            <table>
+                                <tr><td><img src="image/watch/watch1.png"></td></tr>
+                                <tr><td><h4>Amazfit Band 7</h4></td></tr>
+                                <tr><td><h4 class="price">$49</h4></td></tr>
+                            </table>
+                        </div>
+                        <div class="watch">
+                            <table>
+                                <tr><td><img src="image/watch/watch2.png"></td></tr>
+                                <tr><td><h4>Amazfit GTS 4 Mini</h4></td></tr>
+                                <tr><td><h4 class="price">$299</h4></td></tr>
+                            </table> 
+                        </div>
+                        <div class="watch">
+                            <table>
+                                <tr><td><img src="image/watch/watch3.png"></td></tr>
+                                <tr><td><h4>JBL Partybox 710</h4></td></tr>
+                                <tr><td><h4 class="price">$249</h4></td></tr>
+                            </table>
+                        </div>
+                        <div class="watch">
+                            <table>
+                                <tr><td><img src="image/watch/watch4.png"></td></tr>
+                                <tr><td><h4>Tronsmart</h4></td></tr>
+                                <tr><td><h4 class="price">Comming soon!</h4></td></tr>
+                            </table> 
+                        </div>
+                        <div class="watch">
+                            <table>
+                                <tr><td><img src="image/watch/watch5.png"></td></tr>
+                                <tr><td><h4>Soundcore</h4></td></tr>
+                                <tr><td><h4 class="price">Sold out!</h4></td></tr>
+                            </table>
+                        </div>
                     </div>
                 </div>
-                <br><br><br><br>
-                <h1  class="name_product">Laptop</h1>
-                <div class="laptop_product">
-                    <div class="laptop">
-                        <img src="image/laptop/laptop1.png">
-                        <h4>MacBook M2 256 GB</h4>
-                        <h4 class="price">$1359</h4>
+                <div id="phone">
+                    <div id="iphone">
+                        <h1  class="name_product">iPhone</h1>
+                        <div class="apple_product">
+                            <div class="iphone">
+                                <table>
+                                    <tr><td><img src="image/iPhone/iphone1.png"></td></tr>
+                                    <tr><td><h4>14 ProMax 128 GB</h4></td></tr>
+                                    <tr><td><h4 class="price">$1169</h4></td></tr>
+                                </table>
+                            </div>
+                            <div class="iphone">
+                                <table>
+                                    <tr><td><img src="image/iPhone/iphone2.png"></td></tr>
+                                    <tr><td><h4>14 ProMax 256 GB</h4></td></tr>
+                                    <tr><td><h4 class="price">$1269</h4></td></tr>
+                                </table>
+                            </div>
+                            <div class="iphone">
+                                <table>
+                                    <tr><td><img src="image/iPhone/iphone3.png"></td></tr>
+                                    <tr><td><h4>14 ProMax 512 GB</h4></td></tr>
+                                    <tr><td><h4 class="price">$1569</h4></td></tr>
+                                </table>
+                            </div>
+                            <div class="iphone">
+                                <table>
+                                    <tr><td><img src="image/iPhone/iphone4.png"></td></tr>
+                                    <tr><td><h4>14 ProMax 1TB</h4></td></tr>
+                                    <tr><td><h4 class="price">$1839</h4></td></tr>
+                                </table>
+                            </div>
+                            <div class="iphone">
+                                <table>
+                                    <tr><td><img src="image/iPhone/iphone5.png"></td></tr>
+                                    <tr><td><h4>iPhone 13 128 GB</h4></td></tr>
+                                    <tr><td><h4 class="price">$729</h4></td></tr>
+                                </table>
+                            </div>
+                        </div>
+                        <br><br><br>
+                        <div class="apple_product">
+                            <div class="iphone">
+                                <table>
+                                    <tr><td><img src="image/iPhone/iphone6.png"></td></tr>
+                                    <tr><td><h4>14 ProMax 128 GB</h4></td></tr>
+                                    <tr><td><h4 class="price">$1169</h4></td></tr>
+                                </table>
+                            </div>
+                            <div class="iphone">
+                                <table>
+                                    <tr><td><img src="image/iPhone/iphone7.png"></td></tr>
+                                    <tr><td><h4>14 ProMax 256 GB</h4></td></tr>
+                                    <tr><td><h4 class="price">$1269</h4></td></tr>
+                                </table>
+                            </div>
+                            <div class="iphone">
+                                <table>
+                                    <tr><td><img src="image/iPhone/iphone8.png"></td></tr>
+                                    <tr><td><h4>14 ProMax 512 GB</h4></td></tr>
+                                    <tr><td><h4 class="price">$1569</h4></td></tr>
+                                </table>
+                            </div>
+                            <div class="iphone">
+                                <table>
+                                    <tr><td><img src="image/iPhone/iphone9.png"></td></tr>
+                                    <tr><td><h4>14 ProMax 1TB</h4></td></tr>
+                                    <tr><td><h4 class="price">$1839</h4></td></tr>
+                                </table>
+                            </div>
+                            <div class="iphone">
+                                <table>
+                                    <tr><td><img src="image/iPhone/iphone10.png"></td></tr>
+                                    <tr><td><h4>iPhone 13 128 GB</h4></td></tr>
+                                    <tr><td><h4 class="price">$729</h4></td></tr>
+                                </table>
+                            </div>
+                        </div>
+                        <br><br><br>
                     </div>
-                    <div class="laptop">
-                        <img src="image/laptop/laptop2.png">
-                        <h4>MacBook Air M2 256 GB</h4>
-                        <h4 class="price">$1259</h4>
+                    <div id="oppo">
+                        <h1  class="name_product">Oppo</h1>
+                        <div class="apple_product">
+                            <div class="iphone">
+                                <table>
+                                    <tr><td><img src="image/oppo/oppo1.png"></td></tr>
+                                    <tr><td><h4>Oppo Reno10</h4></td></tr>
+                                    <tr><td><h4 class="price">$1169</h4></td></tr>
+                                </table>
+                            </div>
+                            <div class="iphone">
+                                <table>
+                                    <tr><td><img src="image/oppo/oppo2.png"></td></tr>
+                                    <tr><td><h4>Oppo A17</h4></td></tr>
+                                    <tr><td><h4 class="price">$1269</h4></td></tr>
+                                </table>
+                            </div>
+                            <div class="iphone">
+                                <table>
+                                    <tr><td><img src="image/oppo/oppo3.png"></td></tr>
+                                    <tr><td><h4>Oppo A78</h4></td></tr>
+                                    <tr><td><h4 class="price">$1569</h4></td></tr>
+                                </table>
+                            </div>
+                            <div class="iphone">
+                                <table>
+                                    <tr><td><img src="image/oppo/oppo4.png"></td></tr>
+                                    <tr><td><h4>Oppo Reno8</h4></td></tr>
+                                    <tr><td><h4 class="price">$1839</h4></td></tr>
+                                </table>
+                            </div>
+                            <div class="iphone">
+                                <table>
+                                    <tr><td><img src="image/oppo/oppo5.png"></td></tr>
+                                    <tr><td><h4>Oppo A77</h4></td></tr>
+                                    <tr><td><h4 class="price">$729</h4></td></tr>
+                                </table>
+                            </div>
+                        </div>
+                        <br><br><br>
+                        <div class="apple_product">
+                            <div class="iphone">
+                                <table>
+                                    <tr><td><img src="image/oppo/oppo6.png"></td></tr>
+                                    <tr><td><h4>Oppo A57</h4></td></tr>
+                                    <tr><td><h4 class="price">$1169</h4></td></tr>
+                                </table>
+                            </div>
+                            <div class="iphone">
+                                <table>
+                                    <tr><td><img src="image/oppo/oppo7.png"></td></tr>
+                                    <tr><td><h4>Oppo A55</h4></td></tr>
+                                    <tr><td><h4 class="price">$1269</h4></td></tr>
+                                </table>
+                            </div>
+                            <div class="iphone">
+                                <table>
+                                    <tr><td><img src="image/oppo/oppo8.png"></td></tr>
+                                    <tr><td><h4>Oppo A16K</h4></td></tr>
+                                    <tr><td><h4 class="price">$1569</h4></td></tr>
+                                </table>
+                            </div>
+                            <div class="iphone">
+                                <table>
+                                    <tr><td><img src="image/oppo/oppo9.png"></td></tr>
+                                    <tr><td><h4>Oppo A1</h4></td></tr>
+                                    <tr><td><h4 class="price">$1839</h4></td></tr>
+                                </table>
+                            </div>
+                            <div class="iphone">
+                                <table>
+                                    <tr><td><img src="image/oppo/oppo10.png"></td></tr>
+                                    <tr><td><h4>Oppo A98</h4></td></tr>
+                                    <tr><td><h4 class="price">$729</h4></td></tr>
+                                </table>
+                            </div>
+                        </div>
+                        <br><br><br>
                     </div>
-                    <div class="laptop">
-                        <img src="image/laptop/laptop3.png">
-                        <h4>MacBook Air M2 512 GB</h4>
-                        <h4 class="price">$1359</h4>
+                   
+                    <div id="samsung">
+                        <h1  class="name_product">Samsung</h1>
+                        <div class="apple_product">
+                            <div class="iphone">
+                                <table>
+                                    <tr><td><img src="image/samsung/samsung1.png"></td></tr>
+                                    <tr><td><h4>Samsung Galaxy A23</h4></td></tr>
+                                    <tr><td><h4 class="price">$1169</h4></td></tr>
+                                </table>
+                            </div>
+                            <div class="iphone">
+                                <table>
+                                    <tr><td><img src="image/samsung/samsung2.png"></td></tr>
+                                    <tr><td><h4>Samsung Galaxy S22</h4></td></tr>
+                                    <tr><td><h4 class="price">$1269</h4></td></tr>
+                                </table>
+                            </div>
+                            <div class="iphone">
+                                <table>
+                                    <tr><td><img src="image/samsung/samsung3.png"></td></tr>
+                                    <tr><td><h4>Samsung Galaxy A54</h4></td></tr>
+                                    <tr><td><h4 class="price">$1569</h4></td></tr>
+                                </table>
+                            </div>
+                            <div class="iphone">
+                                <table>
+                                    <tr><td><img src="image/samsung/samsung4.png"></td></tr>
+                                    <tr><td><h4>Samsung Galaxy A05e</h4></td></tr>
+                                    <tr><td><h4 class="price">$1839</h4></td></tr>
+                                </table>
+                            </div>
+                            <div class="iphone">
+                                <table>
+                                    <tr><td><img src="image/samsung/samsung5.png"></td></tr>
+                                    <tr><td><h4>Samsung Galaxy A73</h4></td></tr>
+                                    <tr><td><h4 class="price">$729</h4></td></tr>
+                                </table>
+                            </div>
+                        </div>
+                        <br><br><br>
+                        <div class="apple_product">
+                            <div class="iphone">
+                                <table>
+                                    <tr><td><img src="image/samsung/samsung6.png"></td></tr>
+                                    <tr><td><h4>Samsung Galaxy A04s</h4></td></tr>
+                                    <tr><td><h4 class="price">$1169</h4></td></tr>
+                                </table>
+                            </div>
+                            <div class="iphone">
+                                <table>
+                                    <tr><td><img src="image/samsung/samsung7.png"></td></tr>
+                                    <tr><td><h4>Samsung Galaxy M14</h4></td></tr>
+                                    <tr><td><h4 class="price">$1269</h4></td></tr>
+                                </table>
+                            </div>
+                            <div class="iphone">
+                                <table>
+                                    <tr><td><img src="image/samsung/samsung8.png"></td></tr>
+                                    <tr><td><h4>Samsung Galaxy A13</h4></td></tr>
+                                    <tr><td><h4 class="price">$1569</h4></td></tr>
+                                </table>
+                            </div>
+                            <div class="iphone">
+                                <table>
+                                    <tr><td><img src="image/samsung/samsung9.png"></td></tr>
+                                    <tr><td><h4>Samsung Galaxy A52</h4></td></tr>
+                                    <tr><td><h4 class="price">$1839</h4></td></tr>
+                                </table>
+                            </div>
+                            <div class="iphone">
+                                <table>
+                                    <tr><td><img src="image/samsung/samsung10.png"></td></tr>
+                                    <tr><td><h4>Samsung Galaxy M33</h4></td></tr>
+                                    <tr><td><h4 class="price">$729</h4></td></tr>
+                                </table>
+                            </div>
+                        </div>
+                        <br><br><br>
                     </div>
-                    <div class="laptop">
-                        <img src="image/laptop/laptop4.png">
-                        <h4>MacBook Pro 512 GB</h4>
-                        <h4 class="price">$1599</h4>
+                   
+                    <div id="vivo">
+                        <h1  class="name_product">Vivo</h1>
+                        <div class="apple_product">
+                            <div class="iphone">
+                                <table>
+                                    <tr><td><img src="image/vivo/vivo1.png"></td></tr>
+                                    <tr><td><h4>Vivo V23</h4></td></tr>
+                                    <tr><td><h4 class="price">$1169</h4></td></tr>
+                                </table>
+                            </div>
+                            <div class="iphone">
+                                <table>
+                                    <tr><td><img src="image/vivo/vivo2.png"></td></tr>
+                                    <tr><td><h4>Vivo Y56</h4></td></tr>
+                                    <tr><td><h4 class="price">$1269</h4></td></tr>
+                                </table>
+                            </div>
+                            <div class="iphone">
+                                <table>
+                                    <tr><td><img src="image/samsung/samsung3.png"></td></tr>
+                                    <tr><td><h4>Samsung Galaxy A54</h4></td></tr>
+                                    <tr><td><h4 class="price">$1569</h4></td></tr>
+                                </table>
+                            </div>
+                            <div class="iphone">
+                                <table>
+                                    <tr><td><img src="image/samsung/samsung4.png"></td></tr>
+                                    <tr><td><h4>Samsung Galaxy A05e</h4></td></tr>
+                                    <tr><td><h4 class="price">$1839</h4></td></tr>
+                                </table>
+                            </div>
+                            <div class="iphone">
+                                <table>
+                                    <tr><td><img src="image/samsung/samsung5.png"></td></tr>
+                                    <tr><td><h4>Samsung Galaxy A73</h4></td></tr>
+                                    <tr><td><h4 class="price">$729</h4></td></tr>
+                                </table>
+                            </div>
+                        </div>
+                        <br><br><br>
+                        <div class="apple_product">
+                            <div class="iphone">
+                                <table>
+                                    <tr><td><img src="image/samsung/samsung6.png"></td></tr>
+                                    <tr><td><h4>Samsung Galaxy A04s</h4></td></tr>
+                                    <tr><td><h4 class="price">$1169</h4></td></tr>
+                                </table>
+                            </div>
+                            <div class="iphone">
+                                <table>
+                                    <tr><td><img src="image/samsung/samsung7.png"></td></tr>
+                                    <tr><td><h4>Samsung Galaxy M14</h4></td></tr>
+                                    <tr><td><h4 class="price">$1269</h4></td></tr>
+                                </table>
+                            </div>
+                            <div class="iphone">
+                                <table>
+                                    <tr><td><img src="image/samsung/samsung8.png"></td></tr>
+                                    <tr><td><h4>Samsung Galaxy A13</h4></td></tr>
+                                    <tr><td><h4 class="price">$1569</h4></td></tr>
+                                </table>
+                            </div>
+                            <div class="iphone">
+                                <table>
+                                    <tr><td><img src="image/samsung/samsung9.png"></td></tr>
+                                    <tr><td><h4>Samsung Galaxy A52</h4></td></tr>
+                                    <tr><td><h4 class="price">$1839</h4></td></tr>
+                                </table>
+                            </div>
+                            <div class="iphone">
+                                <table>
+                                    <tr><td><img src="image/samsung/samsung10.png"></td></tr>
+                                    <tr><td><h4>Samsung Galaxy M33</h4></td></tr>
+                                    <tr><td><h4 class="price">$729</h4></td></tr>
+                                </table>
+                            </div>
+                        </div>
                     </div>
-                    <div class="laptop">
-                        <img src="image/laptop/laptop5.png">
-                        <h4>MacBook Pro 14 1TB</h4>
-                        <h4 class="price">$2499</h4>
-                    </div>
+                    
                 </div>
-                <br><br><br><br>
-                <h1  class="name_product">Speaker</h1>
-                <div class="speaker_product">
-                    <div class="speaker">
-                        <img src="image/speaker/speaker1.png">
-                        <h4>JBL Flip 6</h4>
-                        <h4 class="price">$119</h4>
-                    </div>
-                    <div class="speaker">
-                        <img src="image/speaker/speaker2.png">
-                        <h4>JBL Partybox</h4>
-                        <h4 class="price">$299</h4>
-                    </div>
-                    <div class="speaker">
-                        <img src="image/speaker/speaker3.png">
-                        <h4>JBL Partybox</h4>
-                        <h4 class="price">$759</h4>
-                    </div>
-                    <div class="speaker">
-                        <img src="image/speaker/speaker4.png">
-                        <h4>Tronsmart</h4>
-                        <h4 class="price">Comming soon!</h4>
-                    </div>
-                    <div class="speaker">
-                        <img src="image/speaker/speaker5.png">
-                        <h4>Soundcore</h4>
-                        <h4 class="price">Sold out!</h4>
-                    </div>
-                </div>
-                <br><br><br><br>
-                <h1  class="name_product">Tablet/iPad</h1>
-                <div class="ipad_product">
-                    <div class="ipad">
-                        <img src="image/ipad/ipad1.png">
-                        <h4>iPad Pro</h4>
-                        <h4 class="price">Sold out!</h4>
-                    </div>
-                    <div class="ipad">
-                        <img src="image/ipad/ipad2.png">
-                        <h4>iPad Mini</h4>
-                        <h4 class="price">$299</h4>
-                    </div>
-                    <div class="ipad">
-                        <img src="image/ipad/ipad3.png">
-                        <h4>iPad</h4>
-                        <h4 class="price">$759</h4>
-                    </div>
-                    <div class="ipad">
-                        <img src="image/ipad/ipad4.png">
-                        <h4>iPad</h4>
-                        <h4 class="price">$599</h4>
-                    </div>
-                    <div class="ipad">
-                        <img src="image/ipad/ipad1.png">
-                        <h4>iPad</h4>
-                        <h4 class="price">Sold out!</h4>
-                    </div>
-                </div>
-                <br><br><br><br>
-                <h1  class="name_product">Smartwatch</h1>
-                <div class="watch_product">
-                    <div class="watch">
-                        <img src="image/watch/watch1.png">
-                        <h4>Amazfit Band 7</h4>
-                        <h4 class="price">$49</h4>
-                    </div>
-                    <div class="watch">
-                        <img src="image/watch/watch2.png">
-                        <h4>Amazfit GTS 4 Mini</h4>
-                        <h4 class="price">$299</h4>
-                    </div>
-                    <div class="watch">
-                        <img src="image/watch/watch3.png">
-                        <h4>JBL Partybox 710</h4>
-                        <h4 class="price">$249</h4>
-                    </div>
-                    <div class="watch">
-                        <img src="image/watch/watch4.png">
-                        <h4>Tronsmart</h4>
-                        <h4 class="price">Comming soon!</h4>
-                    </div>
-                    <div class="watch">
-                        <img src="image/watch/watch5.png">
-                        <h4>Soundcore</h4>
-                        <h4 class="price">Sold out!</h4>
-                    </div>
-                </div>
-
                 
                 
             </div>
